@@ -16,12 +16,12 @@ c) ¿En qué año la carrera de Ingeniería de Software recibió la mayor cantid
 int main (int argc, char *argv[]) {
     //se utiliza srand para cada vez que se corre salgan numeros diferentes
     srand(time(NULL));
-
+    //se declara variables por literales para mayor entendimiento
     int suma, ingresos=0, año=0;
     int alumnos=0, carrera=0;
     int sof=0, años=0;
     int car[6][8];
-
+    //se crea un ciclo anidado con el año y la carrera para determinar el ingreso de estudiantes
     for (int i = 1; i < 6; i++)
     {
         suma=0;
@@ -29,19 +29,20 @@ int main (int argc, char *argv[]) {
         {
             car[i][j]=rand()%300;
             suma+=car[i][j];
+    //se crea un if para el literal b, determinando que carrera tiene mas alumnos en el ultimo año
         if (i==5 && car[i][j]> alumnos)
         {
             alumnos=car[i][j];
             carrera=j;
         }
+    //se crea un if para el literal c, determinando en que año hubo mas ingresos a Ingieneria de Software
         if (j==1 && car[i][j] >sof)
         {
             sof=car[i][j];
             años=i;
         }
-        
-
         }
+    //se crea un if para el literal a, determinando en que año hubo mas ingresos de estudiantes
 
         if (suma>ingresos)
         {
@@ -50,7 +51,7 @@ int main (int argc, char *argv[]) {
         }
         
     }
-
+    //con un ciclo anidado imprimo los ingresos por carrera y año
     for (int i = 1; i < 6; i++)
     {
         for (int j = 1; j < 8; j++)
@@ -59,6 +60,7 @@ int main (int argc, char *argv[]) {
         }
         
     }
+    //se imprime los resultados de los literales
     printf("a) El año en que ingresó la mayor cantidad de alumnos a la universidad fue el #%d con %d estudiantes \n", año, ingresos);
     printf("b) La Carrera que recibió la mayor cantidad de alumnos en el último año fue la carrera #%d con %d estudiantes \n", carrera, alumnos);
     printf("LEYENDA DE CARRERAS \n");
