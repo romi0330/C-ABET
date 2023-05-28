@@ -17,26 +17,27 @@ int main (int argc, char *argv[]) {
     //se utiliza srand para cada vez que se corre salgan numeros diferentes
     srand(time(NULL));
 
-    int semestre1, semestre2;
-    int car[7];
+    int suma;
+    int car[11][8];
 
-    for (int i = 1; i <= 10; i++)
+    for (int i = 0; i < 11; i++)
     {
-        for (int j = 1; j <= 7; j++)
+        for (int j = 0; j < 8; j++)
         {
-            car[j]=rand()%150;
+            car[i][j]=rand()%150;
+            //suma+=car[i][j];
         }
         
     }
-    for (int i = 1; i <= 10; i++)
+    for (int i = 0; i < 11; i++)
     {
-        for (int j = 1; j <= 7; j++)
+        for (int j = 0; j < 8; j++)
         {
-            printf("semestre #%d. carrera #%d %d \n", i, j, car[j]);
+            printf("semestre #%d. carrera #%d %d \n", i, j, car[i][j]);
         }
         
     }
-    
+   //printf("SUMA %d", suma);
 
 
     
