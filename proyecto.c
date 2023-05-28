@@ -28,13 +28,14 @@ int main (int argc, char *argv[]) {
         {
             car[i][j]=rand()%300;
             suma+=car[i][j];
-            if (i=5 && car[i][j]> alumnos)
-            {
-                alumnos=car[i][j];
-                carrera=j;
-            }
-            
+        if (i==5 && car[i][j]> alumnos)
+        {
+            alumnos=car[i][j];
+            carrera=j;
         }
+
+        }
+
         if (suma>ingresos)
         {
             ingresos=suma;
@@ -51,8 +52,8 @@ int main (int argc, char *argv[]) {
         }
         
     }
-    printf("a) El año en que ingresó la mayor cantidad de alumnos a la universidad fue el año #%d con %d estudiantes", año, ingresos);
-    printf("b) La Carrera que recibió la mayor cantidad de alumnos en el último año fue %d con %d estudiantes", carrera, alumnos);
+    printf("a) El año en que ingresó la mayor cantidad de alumnos a la universidad fue el año #%d con %d estudiantes \n", año, ingresos);
+    printf("b) La Carrera que recibió la mayor cantidad de alumnos en el último año fue %d con %d estudiantes \n", carrera, alumnos);
 
     
     return 0;
