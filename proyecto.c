@@ -10,8 +10,35 @@ c) ¿En qué año la carrera de Ingeniería de Software recibió la mayor cantid
 /*Anthony Almeida-Jeison Quimi-Romina Villavicencio*/
 
 #include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
 
 int main (int argc, char *argv[]) {
+    //se utiliza srand para cada vez que se corre salgan numeros diferentes
+    srand(time(NULL));
+
+    int semestre1, semestre2;
+    int car[7];
+
+    for (int i = 1; i <= 10; i++)
+    {
+        for (int j = 1; j <= 7; j++)
+        {
+            car[j]=rand()%150;
+        }
+        
+    }
+    for (int i = 1; i <= 10; i++)
+    {
+        for (int j = 1; j <= 7; j++)
+        {
+            printf("semestre #%d. carrera #%d %d \n", i, j, car[j]);
+        }
+        
+    }
+    
+
+
     
     return 0;
 }
