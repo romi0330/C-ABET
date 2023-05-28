@@ -10,10 +10,13 @@ c) ¿En qué año la carrera de Ingeniería de Software recibió la mayor cantid
 /*Anthony Almeida-Jeison Quimi-Romina Villavicencio*/
 
 #include <stdio.h>
+#include <locale.h>
 #include <time.h>
 #include <stdlib.h>
 
 int main (int argc, char *argv[]) {
+    //se ocupa una función para identificar el idioma y se imprima correctamente todo
+    setlocale(LC_ALL, "Spanish");
     //se utiliza srand para cada vez que se corre salgan numeros diferentes
     srand(time(NULL));
     //se declara variables por literales para mayor entendimiento
@@ -57,7 +60,7 @@ int main (int argc, char *argv[]) {
     {
         for (int j = 1; j < 8; j++)
         {
-            printf("anio #%d. carrera #%d %d \n", i, j, car[i][j]);
+            printf("Año #%d. Carrera #%d Ingresos=%d \n", i, j, car[i][j]);
         }
 
     }
