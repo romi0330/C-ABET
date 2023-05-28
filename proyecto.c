@@ -17,28 +17,42 @@ int main (int argc, char *argv[]) {
     //se utiliza srand para cada vez que se corre salgan numeros diferentes
     srand(time(NULL));
 
-    int suma;
-    int car[11][8];
+    int suma, ingresos=0, año=0;
+    int alumnos=0, carrera=0;
+    int car[6][8];
 
-    for (int i = 0; i < 11; i++)
+    for (int i = 1; i < 6; i++)
     {
-        for (int j = 0; j < 8; j++)
+        suma=0;
+        for (int j = 1; j < 8; j++)
         {
-            car[i][j]=rand()%150;
-            //suma+=car[i][j];
+            car[i][j]=rand()%300;
+            suma+=car[i][j];
+            if (i=5 && car[i][j]> alumnos)
+            {
+                alumnos=car[i][j];
+                carrera=j;
+            }
+            
+        }
+        if (suma>ingresos)
+        {
+            ingresos=suma;
+            año=i;
         }
         
     }
-    for (int i = 0; i < 11; i++)
+
+    for (int i = 1; i < 6; i++)
     {
-        for (int j = 0; j < 8; j++)
+        for (int j = 1; j < 8; j++)
         {
-            printf("semestre #%d. carrera #%d %d \n", i, j, car[i][j]);
+            printf("anio #%d. carrera #%d %d \n", i, j, car[i][j]);
         }
         
     }
-   //printf("SUMA %d", suma);
-
+    printf("a) El año en que ingresó la mayor cantidad de alumnos a la universidad fue el año #%d con %d estudiantes", año, ingresos);
+    printf("b) La Carrera que recibió la mayor cantidad de alumnos en el último año fue %d con %d estudiantes", carrera, alumnos);
 
     
     return 0;
