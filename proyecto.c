@@ -27,6 +27,7 @@ int main (int argc, char *argv[]) {
         suma=0;
         for (int j = 1; j < 8; j++)
         {
+    //en el rand se pone un rango maximo de ingreso de estudiantes de 300
             car[i][j]=rand()%300;
             suma+=car[i][j];
     //se crea un if para el literal b, determinando que carrera tiene mas alumnos en el ultimo año
@@ -41,9 +42,9 @@ int main (int argc, char *argv[]) {
             sof=car[i][j];
             años=i;
         }
+        
         }
     //se crea un if para el literal a, determinando en que año hubo mas ingresos de estudiantes
-
         if (suma>ingresos)
         {
             ingresos=suma;
@@ -58,7 +59,7 @@ int main (int argc, char *argv[]) {
         {
             printf("anio #%d. carrera #%d %d \n", i, j, car[i][j]);
         }
-        
+
     }
     //se imprime los resultados de los literales
     printf("a) El año en que ingresó la mayor cantidad de alumnos a la universidad fue el #%d con %d estudiantes \n", año, ingresos);
